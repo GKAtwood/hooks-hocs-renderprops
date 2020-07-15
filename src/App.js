@@ -3,14 +3,20 @@ import Hooks from './Components/Hooks';
 import ThemeChanger from './Components/ThemeChanger';
 import RenderProp from './Components/RenderProp';
 import './App.css';
+import themeToggle from './HOCs/themeToggle';
 
 function App() {
   return (
     <div className="App">
       {/* <Hooks /> */}
       {/* <ThemeChanger /> */}
-      {/* <RenderProp /> */}
-    </div>
+      <RenderProp render={(themeToggle, toggleFn)=>(
+        <div>className={theme}
+        <button className ='toggle-btn' onClick={toggleFn}>{theme}</button>
+        </div>
+      )}/>
+      </div>
+   
   );
 }
 
